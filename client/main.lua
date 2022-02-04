@@ -194,6 +194,7 @@ RegisterNetEvent('prison:client:Leave', function()
 		end
 		SetEntityCoords(PlayerPedId(), Config.Locations["outside"].coords.x, Config.Locations["outside"].coords.y, Config.Locations["outside"].coords.z, 0, 0, 0, false)
 		SetEntityHeading(PlayerPedId(), Config.Locations["outside"].coords.w)
+		prisonClothes()
 		TriggerServerEvent("qb-clothes:loadPlayerSkin")
 		Wait(500)
 
