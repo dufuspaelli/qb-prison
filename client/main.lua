@@ -169,6 +169,8 @@ RegisterNetEvent('prison:client:Enter', function(time)
 	Wait(2000)
 	DoScreenFadeIn(1000)
 	QBCore.Functions.Notify( Lang:t("error.do_some_work", {currentjob = Config.Jobs[currentJob] }), "error")
+	Wait(2000)
+	ClearPedTasks(PlayerPedId())
 end)
 
 RegisterNetEvent('prison:client:Leave', function()
@@ -225,6 +227,22 @@ RegisterNetEvent('prison:client:UnjailPerson', function()
 		Wait(500)
 		DoScreenFadeIn(1000)
 	end
+end)
+
+RegisterNetEvent('prison:client:UnjailPersonToHospital', function()
+		print("HELLO I AM TRIGGERED")
+		TriggerServerEvent("prison:server:SetJailStatus", 0)
+		TriggerServerEvent("prison:server:GiveJailItems")
+		TriggerEvent("chatMessage", "SYSTEM", "warning", "You got your property back..")
+		inJail = false
+		RemoveBlip(currentBlip)
+		RemoveBlip(CellsBlip)
+		CellsBlip = nil
+		RemoveBlip(TimeBlip)
+		TimeBlip = nil
+		RemoveBlip(ShopBlip)
+		ShopBlip = nil
+
 end)
 
 -- Threads

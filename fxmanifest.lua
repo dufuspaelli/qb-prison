@@ -17,6 +17,11 @@ client_scripts {
 	'client/prisonbreak.lua'
 }
 
+
+exports {
+	--'HasHarness'
+}
+
 server_script 'server/main.lua'
 
 lua54 'yes'

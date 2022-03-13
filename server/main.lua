@@ -92,3 +92,9 @@ end)
 QBCore.Functions.CreateCallback('prison:server:IsAlarmActive', function(source, cb)
     cb(AlarmActivated)
 end)
+
+AddEventHandler('playerDropped', function()
+
+    
+
+end)
