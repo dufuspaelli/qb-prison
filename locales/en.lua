@@ -18,7 +18,7 @@ local Translations = {
         ["timesup"] = "Your time is up! Check yourself out at the visitors center",
     },
     info = {
-        ["timeleft"] = "You still have to... %{JAILTIME} months",
+        ["timeleft"] = "You still have %{JAILTIME} months",
         ["lost_job"] = "You're Unemployed",
     }
 }

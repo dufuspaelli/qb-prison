@@ -146,7 +146,7 @@ end)
 
 RegisterNetEvent('prison:client:Enter', function(time)
 	QBCore.Functions.Notify( Lang:t("error.injail", {Time = time}), "error")
-
+	TriggerServerEvent("prison:server:Enter",true)
 	TriggerEvent("chatMessage", "SYSTEM", "warning", "Your property has been seized, you'll get everything back when your time is up..")
 	DoScreenFadeOut(500)
 	while not IsScreenFadedOut() do
@@ -180,6 +180,7 @@ RegisterNetEvent('prison:client:Leave', function()
 		jailTime = 0
 		TriggerServerEvent("prison:server:SetJailStatus", 0)
 		TriggerServerEvent("prison:server:GiveJailItems")
+		TriggerServerEvent("prison:server:Leave",true)
 		TriggerEvent("chatMessage", "SYSTEM", "warning", "you've received your property back..")
 		inJail = false
 		RemoveBlip(currentBlip)
@@ -231,6 +232,7 @@ end)
 
 RegisterNetEvent('prison:client:UnjailPersonToHospital', function()
 		print("HELLO I AM TRIGGERED")
+		TriggerServerEvent("prison:server:Leave",true)
 		TriggerServerEvent("prison:server:SetJailStatus", 0)
 		TriggerServerEvent("prison:server:GiveJailItems")
 		TriggerEvent("chatMessage", "SYSTEM", "warning", "You got your property back..")
@@ -245,6 +247,10 @@ RegisterNetEvent('prison:client:UnjailPersonToHospital', function()
 
 end)
 
+AddEventHandler("prison:client:setTime", function (time)
+	jailTime = time
+	TriggerServerEvent("prison:server:SetJailStatus", time)
+end)
 -- Threads
 
 CreateThread(function()

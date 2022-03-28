@@ -89,6 +89,17 @@ RegisterNetEvent('prison:server:JailAlarm', function()
     end
 end)
 
+RegisterNetEvent('prison:server:Enter', function(Value)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.SetMetaData("inprison", true)
+end)
+RegisterNetEvent('prison:server:Leave', function(Value)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.SetMetaData("inprison", false)
+end)
+
 QBCore.Functions.CreateCallback('prison:server:IsAlarmActive', function(source, cb)
     cb(AlarmActivated)
 end)
