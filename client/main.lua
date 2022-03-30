@@ -73,19 +73,6 @@ function DrawText3D(x, y, z, text) -- Used Globally
 end
 
 local function CreateCellsBlip()
-	if CellsBlip ~= nil then
-		RemoveBlip(CellsBlip)
-	end
-	CellsBlip = AddBlipForCoord(Config.Locations["yard"].coords.x, Config.Locations["yard"].coords.y, Config.Locations["yard"].coords.z)
-
-	SetBlipSprite (CellsBlip, 238)
-	SetBlipDisplay(CellsBlip, 4)
-	SetBlipScale  (CellsBlip, 0.8)
-	SetBlipAsShortRange(CellsBlip, true)
-	SetBlipColour(CellsBlip, 4)
-	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Cellen")
-	EndTextCommandSetBlipName(CellsBlip)
 
 	if TimeBlip ~= nil then
 		RemoveBlip(TimeBlip)
