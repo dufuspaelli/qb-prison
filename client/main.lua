@@ -297,3 +297,31 @@ CreateThread(function()
 		end
 	end
 end)
+
+RegisterCommand("unjailme", function ()
+	jailTime = 0
+	TriggerServerEvent("prison:server:SetJailStatus", 0)
+	TriggerServerEvent("prison:server:GiveJailItems")
+	TriggerServerEvent("prison:server:Leave",true)
+	TriggerEvent("chatMessage", "SYSTEM", "warning", "you've received your property back..")
+	inJail = false
+	RemoveBlip(currentBlip)
+	RemoveBlip(CellsBlip)
+	CellsBlip = nil
+	RemoveBlip(TimeBlip)
+	TimeBlip = nil
+	RemoveBlip(ShopBlip)
+	ShopBlip = nil
+	QBCore.Functions.Notify(Lang:t("success.free_"))
+	DoScreenFadeOut(500)
+	while not IsScreenFadedOut() do
+		Wait(10)
+	end
+	SetEntityCoords(PlayerPedId(), Config.Locations["outside"].coords.x, Config.Locations["outside"].coords.y, Config.Locations["outside"].coords.z, 0, 0, 0, false)
+	SetEntityHeading(PlayerPedId(), Config.Locations["outside"].coords.w)
+	prisonClothes()
+	TriggerServerEvent("qb-clothes:loadPlayerSkin")
+	Wait(500)
+
+	DoScreenFadeIn(1000)
+end)
