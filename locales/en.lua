@@ -6,7 +6,7 @@ local Translations = {
         ["cancelled"] = "Process Canceled..",
         ["didnt_work"] = "It did not work..",
         ["emty_box"] = "The Box Is Empty..",
-        ["injail"] = "You're in jail for %{Time} months..",
+        ["injail"] = "You're in jail for %{Time} minutes..",
         ["item_missing"] = "You are missing an Item..",
         ["escaped"] = "You escaped... Get the hell out of here.!",
         ["do_some_work"] = "Do some work for sentence reduction, instant job: %{currentjob} ",
@@ -18,7 +18,7 @@ local Translations = {
         ["timesup"] = "Your time is up! Check yourself out at the visitors center",
     },
     info = {
-        ["timeleft"] = "You still have %{JAILTIME} months",
+        ["timeleft"] = "You still have %{JAILTIME} minutes",
         ["lost_job"] = "You're Unemployed",
     }
 }
