@@ -37,7 +37,7 @@ function prisonClothes()
         -- (player, propindex, prop, texture) [[ Only need to edit prop & texure to change clothes ]]
 
         -- Just sets to 0 to remove any props they may have
-        SetPedPropIndex(player, 0, 11, 0) -- Hat
+        SetPedPropIndex(player, 0, -1, 0) -- Hat
         SetPedPropIndex(player, 1, -1, 0) -- Glasses
         SetPedPropIndex(player, 2, -1, 0) -- Ear
         SetPedPropIndex(player, 6, -1, 0) -- Watch
@@ -49,11 +49,11 @@ function prisonClothes()
         SetPedComponentVariation(player, 7, 0, 0) -- Accessory
         
         -- Actual Prison Outfit
-        SetPedComponentVariation(player, 3, 5, 0) -- Torso
-        SetPedComponentVariation(player, 11, 237, 0) -- Torso 2
-        SetPedComponentVariation(player, 8, 15, 0) -- Undershirt
-        SetPedComponentVariation(player, 4, 64, 6) -- Pants
-        SetPedComponentVariation(player, 6, 8, 0) -- Shoes
+        SetPedComponentVariation(player, 3, 14, 0) -- Torso
+        SetPedComponentVariation(player, 11, 338, 0) -- Torso 2
+        SetPedComponentVariation(player, 8, 2, 0) -- Undershirt
+        SetPedComponentVariation(player, 4, 66, 6) -- Pants
+        SetPedComponentVariation(player, 6, 1, 0) -- Shoes
     end
 end
 
